@@ -1,0 +1,38 @@
+<!--pages/residence/residence.wxml-->
+<import src="../common/house/house.wxml"/>
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="住宅"
+>
+</navigation>
+<view class="content">
+  <view class="container residence-container" hidden="{{!loadingHidden}}">
+
+    <view class="input-box flex-r">
+      <text class="iconfont icon-sousuo"></text>
+      <input bindconfirm="nameSaerchData" name="nameObj" confirm-type="search" type="text" maxlength="30" placeholder='输入楼盘名称' />
+    </view>
+
+    <view class="project-box">
+      <view class="project-item flex-r">
+        <view class="project flex-r" wx:for="{{navArr}}" wx:for-item="navItem" wx:key="{{index}}" data-index="{{index}}" catchtap="selectedTap">
+          <text>{{navItem.navName}}</text>
+          <view class="triangle {{navItem.checked?'selected_project':''}}"></view>
+        </view>
+      </view>
+      <view class="popu" wx:if="{{selected>=0}}" bindtap="hidePopuTap"></view>
+      <view class="content-box {{selected >=0 ? 'slidown':'slidup'}}">
+        <view class="content-item {{item.checked?'content-checked':''}}" wx:for="{{searchData}}" wx:for-item="item" wx:key="{{index}}" data-index="{{index}}" catchtap="navItemTap">{{item.descr}}</view>
+      </view>
+    </view>
+
+    <view class="house-box">
+      <template is="house" data="{{recommendArr}}" />
+    </view>
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>

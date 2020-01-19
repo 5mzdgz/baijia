@@ -1,0 +1,28 @@
+<!--pages/my/my.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="个人中心"
+>
+</navigation>
+<view class="content">
+  <view class="container my-container" hidden="{{!loadingHidden}}">
+
+    <view class="user-box">
+      <view class="user">
+        <image src="" />
+        <view class="nikcname">无名字的柜子</view>
+      </view>
+
+      <view class="popu-box flex-r">
+        <view class="colletion selected">我的客户</view>
+        <view class="about">关于我们</view>
+      </view> 
+    </view>
+
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>
+

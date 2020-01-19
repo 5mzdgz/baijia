@@ -1,0 +1,72 @@
+<!--pages/home/home.wxml-->
+<import src="../common/house/house.wxml"/>
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="佰家购房平台"
+>
+</navigation>
+<view class="content">
+  <view class="container home-container" hidden="{{!loadingHidden}}">
+  
+    <view class="swiper-container">
+      <swiper class="swiper"
+        autoplay="{{bannerAutoplay}}" 
+        interval="{{interval}}"
+        duration="{{duration}}"
+        circular="{{circular}}"
+        bindchange='swiperBannerChange'
+        >
+        <block wx:for="{{slider}}" wx:key="{{index}}">
+          <swiper-item class="banner-item" data-item="{{item}}">
+            <image class="item-image" mode='' src="{{item.imgUrl}}" />
+          </swiper-item>
+        </block>
+      </swiper>
+
+      <view class="city-box">
+        <text>贵港</text>
+        <text class="iconfont icon-down-trangle"></text>
+      </view>
+
+      <view class="input-box flex-r" bindtap="searchTap">
+        <text class="iconfont icon-sousuo"></text>
+        <input placeholder="你想住哪里?" />
+      </view>
+    </view>
+
+    <view class="buy-box">
+      <view class="title-box">
+        <text class="label">买房</text>
+        <text class="label-sub">更多服务</text>
+      </view>
+
+      <view class="buy-item flex-r">
+        <view class="img-box" wx:for="{{buyArr}}" wx:key="{{index}}" data-index="{{index}}" bindtap="residenceTap">
+          <image src="{{item.imgUrl}}" />
+          <view class="item-name">{{item.name}}</view>
+          <view class="item-ename">{{item.ename}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="activity-box">
+      <view class="label">热门活动</view>
+      <image src="/images/home/activity.png" />
+    </view>
+
+    <view class="recommend-box">
+      <view class="title-box flex-r">
+        <text class="label">热门推荐</text>
+        <text class="label-sub">更多服务<text class="iconfont icon-xiangyou"></text>
+        </text>
+      </view>
+
+      <template is="house" data="{{recommendArr}}" />
+    </view>
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>

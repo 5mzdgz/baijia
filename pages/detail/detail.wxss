@@ -1,0 +1,207 @@
+/* pages/detail/detail.wxss */
+
+.swiper-container{
+  position: relative;
+  background: #fff;
+}
+
+swiper {
+  height: 510rpx;
+}
+
+.hswiper {
+  height: 990rpx;
+}
+
+.item-image {
+  width: 100%;
+  height: 510rpx;
+}
+
+.hitem-img {
+  width: 100%;
+  height: 990rpx;
+}
+
+.swiper-container .dots{
+  position: absolute;
+  right: 40rpx;
+  bottom: 65rpx;
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background-color: rgba(130, 136, 160, 0.5);
+  z-index: 999;
+  color: #fff;
+  border-radius: 25rpx;
+}
+
+.house-box {
+  padding: 30rpx 45rpx;
+}
+
+.house-box .area {
+  font-size: 50rpx;
+  font-weight: 700;
+}
+
+.house-box .attr {
+  justify-content: flex-start;
+  padding: 20rpx 0;
+}
+
+.house-box .attr .status, .attr-item {
+  font-size: 22rpx;
+  width: 60rpx;
+  color: #fff;
+  padding: 4rpx 10rpx;
+  border-radius: 4rpx;
+  text-align: center;
+  margin-right: 10rpx;
+  background: linear-gradient(#bfe8f5, #41b3e0);
+}
+
+.attr-item {
+  color: #666;
+  background: rgb(236, 240, 243);
+}
+
+.class-box {
+  justify-content: space-around;
+  padding: 40rpx 0;
+}
+
+.class-box .class-item {
+  flex: 1;
+  border-right: 2rpx solid #ccc;
+}
+
+.class-box .class-item:nth-child(3) {
+  border-right: none;
+}
+
+.class-box .class-item:nth-child(1) .title {
+  margin-left: 0;
+  color: rgb(255, 85, 0);
+}
+
+.class-box .class-item:nth-child(1) text {
+  margin-left: 0;
+}
+
+.class-box .class-item .title {
+  font-size: 45rpx;
+  font-weight: 700;
+  color: #bbb;
+  margin-left: 30rpx;
+}
+
+.class-box .class-item text {
+  font-size: 22rpx;
+  color: #666;
+  margin-left: 30rpx;
+}
+
+.coupon {
+  padding: 20rpx 20rpx;
+}
+
+.coupon .left-box {
+  line-height: 60rpx;
+  flex: 1.4;
+}
+
+.coupon .left-box .sub {
+  font-size: 22rpx;
+  color: #bbb;
+}
+
+button {
+  flex: 1;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 15rpx;
+  border-radius: 20rpx;
+  background: -webkit-linear-gradient(left,rgb(255, 141, 15), rgb(255,111,45));
+}
+
+.house-info {
+  padding: 0 45rpx;
+}
+
+.label-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  padding: 20rpx 0;
+}
+
+.house-info .info-box {
+  /* height: 600rpx; */
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.house-info .info-box .info {
+  text-indent: 48rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  text-align: justify;
+}
+
+.house-info .info-box .item-box {
+  font-size: 26rpx;
+  padding: 20rpx 0;
+  margin-right: 40rpx;
+}
+
+.diagram {
+  padding: 45rpx;
+}
+
+.diagram-nav {
+  justify-content: space-between;
+}
+
+.diagram-nav .right {
+  font-size: 26rpx;
+  color: #bbb;
+}
+
+.diagram-nav .right .iconfont {
+  font-size: 26rpx;
+}
+
+.diagram image {
+  width: 100%;
+  background: #eee;
+  margin: 20rpx 0;
+}
+
+.map {
+  padding: 0 45rpx;
+}
+
+.maMap {
+  margin: 0 5%;
+  width: 90%;
+  height: 500rpx;
+}
+
+.collection {
+  padding: 50rpx 45rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.collection .col-left {
+  flex: 1;
+  line-height: 45rpx;
+  text-align: center;
+  font-size: 26rpx;
+}
+
+.collection button {
+  flex: 1;
+}

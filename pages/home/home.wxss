@@ -1,0 +1,127 @@
+/* pages/home/home.wxss */
+@import "../common/house/house.wxss";
+
+.content {
+  text-align: center;
+}
+
+.swiper-container{
+  position: relative;
+  background: #fff;
+}
+
+swiper{
+  height: 349rpx;
+}
+
+.item-image {
+  width: 100%;
+  height: 349rpx;
+}
+
+.city-box {
+  position: absolute;
+  width: 140rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  background-color: rgba(130, 136, 160, 0.5);
+  top: 160rpx;
+  left: 50rpx;
+  z-index: 999;
+  font-size: 26rpx;
+  color: #fff;
+}
+
+.city-box .icon-down-trangle {
+  font-size: 22rpx;
+  margin-left: 5rpx;
+}
+ 
+
+.input-box {
+  position: absolute;
+  top: 305rpx;
+  left: 5%;
+  width: 80%;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding: 0 5%;
+  border-radius: 45rpx;
+  background: #fff;
+  box-shadow: 0px 5rpx 20rpx rgba(39, 51, 99, 0.16);
+  z-index: 999;
+}
+
+.input-box .icon-sousuo {
+  font-size: 30rpx;
+}
+
+.input-box input {
+  width: 100%;
+  text-align: left;
+  font-size: 26rpx;
+  margin-left: 15rpx;
+}
+
+.buy-box {
+  margin-top: 100rpx;
+  padding: 0 50rpx;
+}
+
+.buy-box .title-box {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 50rpx;
+}
+
+.label {
+  font-size: 35rpx;
+  font-weight: 700;
+}
+
+.buy-box .title-box .label-sub {
+  font-size: 26rpx;
+  color: #aaa;
+  margin-left: 20rpx;
+}
+
+.buy-item {
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ddd;
+  padding-bottom: 25rpx;
+}
+
+.buy-item .img-box {
+  flex: 1;
+}
+
+.buy-item .img-box image {
+  width: 102.8rpx;
+  height: 110rpx;
+}
+
+.item-name {
+  font-size: 26rpx;
+  font-weight: 700;
+}
+
+.item-ename {
+  font-size: 14rpx;
+}
+
+.activity-box {
+  margin-top: 50rpx;
+  padding: 0 40rpx;
+}
+
+.activity-box .label {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20rpx;
+}
+
+.activity-box image {
+  width: 100%;
+  height: 255rpx;
+}

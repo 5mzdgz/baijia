@@ -1,0 +1,114 @@
+<!--pages/detail/detail.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{title}}"
+>
+</navigation>
+<view class="content">
+  <view class="container detail-container" hidden="{{!loadingHidden}}">
+    <view class="swiper-container">
+      <swiper class="swiper"
+        autoplay="{{bannerAutoplay}}" 
+        interval="{{interval}}"
+        duration="{{duration}}"
+        circular="{{circular}}"
+        bindchange='swiperBannerChange'
+        >
+        <block wx:for="{{slider}}" wx:key="{{index}}">
+          <swiper-item class="banner-item">
+            <image class="item-image" data-src="{{item}}" mode='' src="{{item}}" bindtap="previewImage" />
+          </swiper-item>
+        </block>
+      </swiper>
+
+      <view class="dots">
+        <text>{{current+1}}/{{slider.length}}</text>
+      </view>
+    </view>
+
+    <view class="house-box">
+      <view class="area">{{dData.name}}</view>
+      <view class="attr flex-r">
+        <view class="status">在售</view>
+        <view class="attr-item">住宅</view>
+        <view class="attr-item">住宅</view>
+      </view>
+      <view class="class-box flex-r">
+        <view class="class-item">
+          <view class="title">{{dData.itemPrice}}元/m²</view>
+          <text>参考均价</text>
+        </view>
+        <view class="class-item">
+          <view class="title">开盘时间</view>
+          <text></text>
+        </view>
+        <view class="class-item">
+          <view class="title">户型待定</view>
+          <text>最小户型</text>
+        </view>
+      </view>
+      <view class="coupon flex-r">
+        <view class="left-box">
+          <view class="title">是否有优惠</view>
+          <view class="sub">点击咨询置业顾问看房</view>
+        </view>
+        <button>优惠咨询</button>
+      </view>
+    </view>
+
+    <view class="house-info">
+      <view class="label-title">楼盘信息</view>
+      <view class="info-box">
+        <view class="info">{{dData.descr}}</view>
+        <!-- <view class="item-box">
+          <text class="label">开盘时间:</text>
+          <text class="content">2019年10月20</text>
+        </view> -->
+      </view>
+    </view>
+
+    <view class="diagram">
+      <view class="diagram-nav flex-r">
+        <text class="label-title">户型图库</text>
+        <text class="right">更多服务<text class="iconfont icon-xiangyou"></text></text>
+      </view>
+      <view class="swiper-container">
+        <swiper class="swiper hswiper"
+          autoplay="{{bannerAutoplay}}" 
+          interval="{{interval}}"
+          duration="{{duration}}"
+          circular="{{circular}}"
+          bindchange='swiperChange'
+          >
+          <block wx:for="{{hslider}}" wx:key="{{index}}">
+            <swiper-item class="banner-item">
+              <image class="item-image hitem-img" data-src="{{item}}" mode='' src="{{item}}" bindtap="previewImageTwo" />
+            </swiper-item>
+          </block>
+        </swiper>
+
+        <view class="dots">
+          <text>{{hcurrent+1}}/{{hslider.length}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="map">
+      <view class="label-title">位置及周边</view>
+    </view>
+
+    <map id="myMap" class="maMap" longitude="{{dData.longitude}}" latitude="{{dData.latitude}}" scale="{{scale}}" markers="{{markers}}"subkey="5MUBZ-PKSK3-BXL3V-36KSL-UNWCJ-32FL4"/>
+
+    <view class="collection">
+      <view class="col-left">
+        <view class="iconfont icon-iconfontxihuan"></view>
+        <text>收藏</text>
+      </view>
+      <button>优惠咨询</button>
+    </view>
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>

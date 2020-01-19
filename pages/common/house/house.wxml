@@ -1,0 +1,20 @@
+
+<template name="house">
+  <view class="recommend-item" wx:for="{{recommendArr}}" wx:key="{{index}}" data-id="{{item.itemId}}" bindtap="detailTap">
+    <image src="{{item.itemImage}}" />
+    <view class="recommend-info">
+      <view class="title flex-r pd-btm">
+        <view class="left">{{item.name}}</view>
+        <view class="right">{{item.status?'在售':'售出'}}</view>
+      </view>
+      <view class="address pd-btm ellipsis_1">{{item.itemAddress}}</view>
+      <view class="attr flex-r pd-btm">
+        <view class="attr-item">公寓</view>
+        <view class="attr-item">精装</view>
+        <view class="attr-item">精装</view>
+        <view class="attr-item">精装</view>
+      </view>
+      <view class="price pd-btm">{{item.itemPrice}}元/m²</view>
+    </view>
+  </view>
+</template>
