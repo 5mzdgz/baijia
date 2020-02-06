@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -64,6 +64,41 @@
 					"id": -1,
 					"name": "login",
 					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "contact",
+					"pathName": "pages/contact/contact",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "recommend",
+					"pathName": "pages/recommend/recommend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "earn",
+					"pathName": "pages/earn/earn",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "commission",
+					"pathName": "pages/my/commission/commission",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "customer",
+					"pathName": "pages/my/customer/customer",
 					"scene": null
 				}
 			]

@@ -32,7 +32,7 @@ Page({
   onLoad: function (options) {
     this.data.id = options.id
     // this.getCurrentLL()
-    this.getDetailData(this.data.id)
+    // this.getDetailData(this.data.id)
   },
   // 顶部
   swiperBannerChange: function (e) {

@@ -1,0 +1,15 @@
+<!--pages/my/customer/customer.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{title}}"
+>
+</navigation>
+<view class="content">
+  <view class="container commission-container" hidden="{{!loadingHidden}}">
+    我的客户
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>

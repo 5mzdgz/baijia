@@ -1,0 +1,15 @@
+<!--pages/contact/contact.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{title}}"
+>
+</navigation>
+<view class="content">
+  <view class="container contact-container" hidden="{{!loadingHidden}}">
+    联系我们
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>

@@ -1,0 +1,15 @@
+<!--pages/my/commission/commission.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{title}}"
+>
+</navigation>
+<view class="content">
+  <view class="container commission-container" hidden="{{!loadingHidden}}">
+    我的佣金
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>

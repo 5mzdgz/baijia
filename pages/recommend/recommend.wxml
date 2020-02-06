@@ -1,0 +1,60 @@
+<!--pages/recommend/recommend.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{title}}"
+>
+</navigation>
+<view class="content">
+  <view class="container recommend-container" hidden="{{!loadingHidden}}">
+    <form>
+      <view class="input-item">
+        <view class="label">客户姓名</view>
+        <input type='text' placeholder="请输入客户姓名" maxlength="10" />
+      </view>
+      <view class="input-item">
+        <view class="label">客户手机</view>
+        <input type='number' placeholder="请输入手机号" maxlength="11" />
+      </view>
+
+      <view class="input-item">
+        <view class="label">性别</view>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <radio class="radio" wx:for-items="{{items}}" wx:key="sexid" value="{{item.sexid}}" checked="{{item.checked}}">
+            <text>{{item.value}}</text>
+          </radio>
+        </radio-group>
+      </view>
+
+      <view class="input-item">
+        <view class="label">推荐人姓名</view>
+        <input type='text' placeholder="请输入推荐人姓名" maxlength="10" />
+      </view>
+
+      <view class="input-item">
+        <view class="label">推荐人电话</view>
+        <input type='number' placeholder="请输入推荐人电话" maxlength="11" />
+      </view>
+
+      <view class="input-item">
+        <view class="label">预约看房时间</view>
+        <input type='text' placeholder="2020年X月XX日" maxlength="32" />
+      </view>
+
+      <view class="textera-box">
+        <textarea placeholder="填写客户描述说明，如客户意向户型、面积等" />
+        <view class="tips-right">剩余200个字</view>
+      </view>
+
+      <view class="input-item intention">
+        <text class="label">意向楼盘</text>
+        <text class="iconfont icon-xiangyou"></text>
+      </view>
+
+      <button class="form-bottom">推荐</button>
+    </form>
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>

@@ -1,0 +1,64 @@
+/* pages/recommend/recommend.wxss */
+
+page {
+  background: #f1f1f1;
+}
+
+.input-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  height: 100rpx;
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  padding: 0 30rpx;
+}
+
+.intention {
+  justify-content: space-between;
+}
+
+.intention .icon-xiangyou {
+  font-weight: 900;
+  color: #888;
+}
+
+.input-item .label {
+  width: 200rpx;
+  margin-right: 30rpx;
+}
+
+.radio-group .radio {
+  margin-right: 100rpx;
+}
+
+.textera-box textarea {
+  margin-top: 20rpx;
+  background: #fff;
+  width: 92%;
+  font-size: 30rpx;
+  padding: 30rpx;
+  height: 250rpx;
+  letter-spacing: 2rpx;
+  line-height: 50rpx;
+}
+
+.tips-right {
+  text-align: right;
+  font-size: 30rpx;
+  color: #aaa;
+  padding: 20rpx 30rpx;
+}
+
+.form-bottom {
+  width: 80%;
+  border-radius: 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 80rpx;
+  background: linear-gradient(to right, #f3a81c, #cf5605);
+  letter-spacing: 20rpx;
+  font-weight: bold;
+  color: #fff;
+}

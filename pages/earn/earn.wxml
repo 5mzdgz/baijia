@@ -1,0 +1,15 @@
+<!--pages/earn/earn.wxml-->
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{title}}"
+>
+</navigation>
+<view class="content">
+  <view class="container earn-container" hidden="{{!loadingHidden}}">
+    赚取佣金
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>
