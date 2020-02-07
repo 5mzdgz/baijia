@@ -6,7 +6,13 @@ Page({
    */
   data: {
     showIcon: false,
-    loadingHidden: true
+    loadingHidden: true,
+    items: [
+      { id: 1, name: '我要推荐', imgUrl: '/images/common/my_recommend.png' },
+      { id: 2, name: '我的客户', imgUrl: '/images/common/customer.png' },
+      { id: 3, name: '我的佣金', imgUrl: '/images/common/my_commission.png' },
+      { id: 4, name: '活动规则', imgUrl: '/images/common/activitiy.png' }
+    ]
   },
 
   /**
@@ -14,6 +20,36 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  /**
+   * 页面跳转
+   */
+  setItemClick: function(e) {
+    const index = e.currentTarget.dataset.index;
+    console.log(index)
+    if (index === 0) {
+      wx.switchTab({
+        url: '/pages/recommend/recommend',
+      })
+    }
+
+    if (index === 1) {
+      wx.navigateTo({
+        url: './customer/customer',
+      })
+    }
+
+    if (index === 2) {
+      wx.navigateTo({
+        url: './commission/commission',
+      })
+    }
+
+    if (index === 3) {
+      wx.navigateTo({
+        url: './customer/customer',
+      })
+    }
   },
 
   /**

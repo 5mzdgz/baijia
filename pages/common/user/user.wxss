@@ -1,0 +1,22 @@
+.user-box {
+  padding: 30rpx 50rpx;
+}
+
+.user-box image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.user-info {
+  margin-left: 35rpx;
+}
+
+.user-info .user-name {
+  font-weight: 900;
+  margin-right: 20rpx;
+}
+
+.user-info .photo {
+  font-size: 32rpx;
+  color: #888;
+}

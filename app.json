@@ -39,14 +39,14 @@
       {
         "pagePath": "pages/recommend/recommend",
         "text": "我要推荐",
-        "iconPath": "images/tab/my_selected.png",
-        "selectedIconPath": "images/tab/selected_my.png"
+        "iconPath": "images/tab/recommend.png",
+        "selectedIconPath": "images/tab/selected_recommend.png"
       },
       {
         "pagePath": "pages/contact/contact",
         "text": "联系我们",
-        "iconPath": "images/tab/my_selected.png",
-        "selectedIconPath": "images/tab/selected_my.png"
+        "iconPath": "images/tab/contact.png",
+        "selectedIconPath": "images/tab/selected_contact.png"
       },
       {
         "pagePath": "pages/my/my",

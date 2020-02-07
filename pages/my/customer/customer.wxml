@@ -1,4 +1,5 @@
 <!--pages/my/customer/customer.wxml-->
+<import src="../../common/user/user.wxml"/>
 <navigation
 id='Navigation'
 show-icon='{{showIcon}}'
@@ -7,7 +8,7 @@ title="{{title}}"
 </navigation>
 <view class="content">
   <view class="container commission-container" hidden="{{!loadingHidden}}">
-    我的客户
+    <template is="user" />
   </view>
   <loading hidden="{{loadingHidden}}">
     加载中...

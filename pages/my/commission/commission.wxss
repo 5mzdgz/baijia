@@ -1,1 +1,40 @@
 /* pages/my/commission/commission.wxss */
+@import "../../common/user/user.wxss";
+
+
+.commission-box {
+  padding: 100rpx 120rpx;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+.item-box {
+  border-bottom: 1px solid #ddd;
+  padding: 35rpx 0;
+}
+
+.item-box .label{
+  width: 160rpx;
+  text-align: right;
+  margin-right: 35rpx;
+}
+
+.item-box .money{
+  margin-right: 35rpx;
+  font-weight: 900;
+  letter-spacing: 3rpx;
+  border: 1px solid #aaa;
+  padding: 0 15rpx;
+  font-size: 36rpx;
+  color: #ff5400;
+}
+
+.img-box {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 40rpx;
+}
+
+.img-box image {
+  width: 130rpx;
+  height: 130rpx;
+}

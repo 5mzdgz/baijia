@@ -1,4 +1,5 @@
 <!--pages/my/commission/commission.wxml-->
+<import src="../../common/user/user.wxml"/>
 <navigation
 id='Navigation'
 show-icon='{{showIcon}}'
@@ -7,7 +8,33 @@ title="{{title}}"
 </navigation>
 <view class="content">
   <view class="container commission-container" hidden="{{!loadingHidden}}">
-    我的佣金
+    <template is="user" />
+
+    <view class="commission-box">
+      <view class="img-box flex-c">
+        <image src="/images/common/my_commission.png"/>
+        <text>我的佣金</text>
+      </view>
+      <view class="item-box flex-r">
+        <view class="label">佣金总额</view>
+        <view class="money">88888</view>
+        <text class="util">元</text>
+      </view>
+
+      <view class="item-box flex-r">
+        <text class="label">待结算佣金</text>
+        <view class="money">88888</view>
+        <text class="util">元</text>
+      </view>
+
+      <view class="item-box flex-r">
+        <text class="label">及结算佣金</text>
+        <view class="money">88888</view>
+        <text class="util">元</text>
+      </view>
+
+    </view>
+
   </view>
   <loading hidden="{{loadingHidden}}">
     加载中...

@@ -1,4 +1,5 @@
 <!--pages/earn/earn.wxml-->
+
 <navigation
 id='Navigation'
 show-icon='{{showIcon}}'
