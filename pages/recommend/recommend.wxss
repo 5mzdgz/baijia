@@ -57,7 +57,7 @@ page {
   height: 80rpx;
   line-height: 80rpx;
   margin-top: 80rpx;
-  background: linear-gradient(to right, #f3a81c, #cf5605);
+  background: linear-gradient(to right, #f3a81c, #ff5400);
   letter-spacing: 20rpx;
   font-weight: bold;
   color: #fff;

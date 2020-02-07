@@ -35,13 +35,13 @@ Page({
 
     if (index === 1) {
       wx.navigateTo({
-        url: './customer/customer',
+        url: './commission/commission?flag=1',
       })
     }
 
     if (index === 2) {
       wx.navigateTo({
-        url: './commission/commission',
+        url: './commission/commission?flag=2',
       })
     }
 

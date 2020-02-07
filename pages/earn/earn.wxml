@@ -8,7 +8,35 @@ title="{{title}}"
 </navigation>
 <view class="content">
   <view class="container earn-container" hidden="{{!loadingHidden}}">
-    赚取佣金
+    <view class="earn-box">
+
+      <view class="title">佣金项目明细</view>
+
+      <view class="table">
+        <view class="tr">
+          <view class="th th1">项目名称</view>
+          <view class="th th2">佣金（元/套）</view>
+          <view class="th th3">有效时间</view>
+        </view>
+        
+        <view class="tr">
+          <view class="td td1">大檀世家<text class="sub">(购买120m以上户型)</text></view>
+          <view class="td td2"><text class="num">10000</text>元/套</view>
+          <view class="td td3">金属首饰</view>
+        </view>
+        
+      </view>
+
+      <view class="tips">跟多项目陆续签约中，请期待......</view>
+
+      <view class="cluse">
+        <view class="cluse-title">符合赚取佣金的客户全体:</view>
+        <view class="item">1.从未到访过售楼部的客户</view>
+        <view class="item">2.手机号码提前30分钟报备</view>
+      </view>
+
+      <button class="save-ommission">申请加入赚取佣金</button>
+    </view>
   </view>
   <loading hidden="{{loadingHidden}}">
     加载中...

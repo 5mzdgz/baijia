@@ -1,1 +1,90 @@
 /* pages/earn/earn.wxss */
+page {
+  background: #f1f1f1;
+}
+
+.earn-box {
+  padding: 40rpx 30rpx;
+}
+
+.title {
+  margin-left: 20rpx;
+}
+
+.table {
+  border: 1px solid #555;
+  border-right:0;
+  border-bottom: 0;
+  margin: 25rpx 0;
+  text-align: left;
+  background: #fff;
+}
+
+.tr:nth-child(1) {
+  background: #888;
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.tr {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22rpx;
+  line-height: 40rpx;
+}
+
+.th,.td{
+  padding: 10rpx;
+  border-bottom: 1px solid #555;
+  border-right: 1px solid #555;
+  text-align: center;
+  width: 100%;
+}
+
+.th1, .td1 {
+  width: 140%;
+}
+
+.td .num {
+  font-size: 30rpx;
+  letter-spacing: 2rpx;
+  color: #ff5400;
+}
+
+.td .sub {
+  font-size: 16rpx;
+}
+
+.tips {
+  font-size: 16rpx;
+  padding-bottom: 30rpx;
+  padding-left: 45rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.cluse {
+  padding: 20rpx 0 0 45rpx;
+}
+
+.cluse-title {
+  font-weight: bold;
+}
+
+.cluse .item {
+  font-size: 20rpx;
+  line-height: 40rpx;
+}
+
+.save-ommission {
+  position: fixed;
+  bottom: 40rpx;
+  left: 8%;
+  width: 84%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 5rpx;
+  border-radius: 20rpx;
+  background: linear-gradient(to right, #f3a81c, #ff5400);
+}

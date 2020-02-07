@@ -7,6 +7,7 @@ Page({
   data: {
     showIcon: true,
     loadingHidden: true,
+    title: '赚取佣金'
   },
 
   /**

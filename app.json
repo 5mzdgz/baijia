@@ -1,10 +1,9 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/my/my",
     "pages/earn/earn",
     "pages/my/commission/commission",
-    "pages/my/customer/customer",
     "pages/detail/detail",
     "pages/residence/residence",
     "pages/recommend/recommend",
@@ -12,12 +11,12 @@
     "pages/login/login",
     "components/navigation/navigation"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationStyle": "custom",
     "navigationBarTitleText": "佰家购",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "permission": {

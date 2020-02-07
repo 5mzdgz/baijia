@@ -12,25 +12,25 @@ title="{{title}}"
 
     <view class="commission-box">
       <view class="img-box flex-c">
-        <image src="/images/common/my_commission.png"/>
-        <text>我的佣金</text>
+        <image src="{{viewData.imgUrl}}"/>
+        <text>{{viewData.myName}}</text>
       </view>
       <view class="item-box flex-r">
-        <view class="label">佣金总额</view>
-        <view class="money">88888</view>
-        <text class="util">元</text>
-      </view>
-
-      <view class="item-box flex-r">
-        <text class="label">待结算佣金</text>
-        <view class="money">88888</view>
-        <text class="util">元</text>
+        <view class="label">{{viewData.totalName}}</view>
+        <view class="money">{{viewData.totalCommission}}</view>
+        <text class="util">{{viewData.util}}</text>
       </view>
 
       <view class="item-box flex-r">
-        <text class="label">及结算佣金</text>
-        <view class="money">88888</view>
-        <text class="util">元</text>
+        <text class="label">{{viewData.noPayName}}</text>
+        <view class="money">{{viewData.noPayCommission}}</view>
+        <text class="util">{{viewData.util}}</text>
+      </view>
+
+      <view class="item-box flex-r">
+        <text class="label">{{viewData.payName}}</text>
+        <view class="money">{{viewData.payCommission}}</view>
+        <text class="util">{{viewData.util}}</text>
       </view>
 
     </view>

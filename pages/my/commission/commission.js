@@ -7,13 +7,46 @@ Page({
   data: {
     showIcon: true,
     loadingHidden: true,
+    viewData: {},
+    commissionData: {
+      myName: '我的佣金',
+      imgUrl: '/images/common/my_commission.png',
+      totalName: '佣金总额',
+      noPayName: '待结算佣金',
+      payName:'已结算佣金',
+      totalCommission: 88888,
+      noPayCommission: 88888,
+      payCommission: 88888,
+      util: '元'
+    },
+    customers: {
+      myName: '我的客户',
+      imgUrl: '/images/common/customer.png',
+      totalName: '报备客户',
+      noPayName: '到访客户',
+      payName: '成交客户',
+      totalCommission: 8,
+      noPayCommission: 8,
+      payCommission: 8,
+      util: '组'
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const flag = parseInt(options.flag);
+    
+    if (flag === 1) {
+      this.setData({
+        viewData: this.data.customers
+      })
+    } else {
+      this.setData({
+        viewData: this.data.commissionData
+      })
+    }
   },
 
   /**
