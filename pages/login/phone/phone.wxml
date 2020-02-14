@@ -1,0 +1,29 @@
+<!--pages/login/phone/phone.wxml-->
+
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="手机号登录"
+>
+</navigation>
+<view class="content">
+  <view class="container login-container" hidden="{{!loadingHidden}}">
+
+    <view class="phone-box">
+      <view class="title">手机快捷登录</view>
+      <view class="num-login">
+        <form bindsubmit='phoneLoginTap'>
+          <view class="send-code flex-r">
+            <input type="number" name="phone" value='{{phone}}' bindinput='getPhoneValue' placeholder="输入手机号码" />
+            <button class="send" disabled='{{disabled}}' bindtap='getVerificationCode'>{{codename}}</button>
+          </view>
+          <input class="phone" type="number" name="code" placeholder="请输入验证码" maxlength="11" />
+          <button class="btn-login" form-type='submit'>登录</button>
+        </form>
+      </view>
+    </view>
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>

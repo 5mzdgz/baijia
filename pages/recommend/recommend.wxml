@@ -7,14 +7,14 @@ title="{{title}}"
 </navigation>
 <view class="content">
   <view class="container recommend-container" hidden="{{!loadingHidden}}">
-    <form>
+    <form bindsubmit='saveRecommendTap'>
       <view class="input-item">
         <view class="label">客户姓名</view>
-        <input type='text' placeholder="请输入客户姓名" maxlength="10" />
+        <input type='text' name="customerName" placeholder="请输入客户姓名" maxlength="10" />
       </view>
       <view class="input-item">
         <view class="label">客户手机</view>
-        <input type='number' placeholder="请输入手机号" maxlength="11" />
+        <input type='number' name="customerPhone" placeholder="请输入手机号" maxlength="11" />
       </view>
 
       <view class="input-item">
@@ -28,21 +28,21 @@ title="{{title}}"
 
       <view class="input-item">
         <view class="label">推荐人姓名</view>
-        <input type='text' placeholder="请输入推荐人姓名" maxlength="10" />
+        <input type='text' name="recommendName" placeholder="请输入推荐人姓名" maxlength="10" />
       </view>
 
       <view class="input-item">
         <view class="label">推荐人电话</view>
-        <input type='number' placeholder="请输入推荐人电话" maxlength="11" />
+        <input type='number' name="recommendPhone" placeholder="请输入推荐人电话" maxlength="11" />
       </view>
 
       <view class="input-item">
         <view class="label">预约看房时间</view>
-        <input type='text' placeholder="2020年X月XX日" maxlength="32" />
+        <input type='text' name="orderTime" placeholder="2020年X月XX日" maxlength="32" />
       </view>
 
       <view class="textera-box">
-        <textarea placeholder="填写客户描述说明，如客户意向户型、面积等" />
+        <textarea name="descr" placeholder="填写客户描述说明，如客户意向户型、面积等" />
         <view class="tips-right">剩余200个字</view>
       </view>
 
@@ -51,7 +51,7 @@ title="{{title}}"
         <text class="iconfont icon-xiangyou"></text>
       </view>
 
-      <button class="form-bottom">推荐</button>
+      <button class="form-bottom" form-type='submit'>推荐</button>
     </form>
   </view>
   <loading hidden="{{loadingHidden}}">

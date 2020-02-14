@@ -1,1 +1,66 @@
 /* pages/contact/contact.wxss */
+page {
+  background: #f9f9f9;
+}
+
+.contact-container {
+  text-align: center;
+  background: #fff;
+}
+
+.logo-img {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 50rpx 0;
+}
+
+.contact-name {
+  font-size: 32rpx;
+}
+
+.score-box {
+  justify-content: center;
+  padding: 20rpx 0;
+}
+
+.score {
+  background:  #ff5400;
+  color: #fff;
+  width: 80rpx;
+  border-radius: 5rpx;
+  margin-left: 20rpx;
+}
+
+.introduce-one {
+  margin-top: 20rpx;
+}
+
+.introduce-two {
+  margin-bottom: 40rpx;
+}
+
+.contact-phono {
+  justify-content: center;
+  padding: 30rpx 0;
+  border-radius: 0;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 5rpx 10rpx rgba(0, 0, 0, 0.016);
+}
+
+.phone-icon {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.phone-box {
+  margin-left: 40rpx;
+  height: 110rpx;
+  line-height: 55rpx;
+  text-align: left;
+  color: #555;
+}
+
+.phone {
+  font-size: 40rpx;
+  font-weight: bold;
+}

@@ -1,6 +1,10 @@
 /* pages/my/my.wxss */
 @import "../common/user/user.wxss";
 
+page {
+  background: #f9f9f9;
+}
+
 .set-box {
   padding: 50rpx 50rpx;
   border-top: 1px solid #ddd;
@@ -9,6 +13,7 @@
   clear: both;
   display: flex;
   flex-wrap: wrap;
+  background: #fff;
 }
 
 .set-item {
@@ -38,4 +43,16 @@
 .set-item image {
   width: 130rpx;
   height: 130rpx;
+}
+
+.select-box {
+  justify-content: space-between;
+  padding: 40rpx;
+  margin-top: 30rpx;
+  background: #fff;
+}
+
+.right {
+  margin-right: 30rpx;
+  color: #888;
 }

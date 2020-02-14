@@ -1,19 +1,13 @@
-// pages/recommend/recommend.js
-import { Recommend } from './recommend-model.js';
-let recommend = new Recommend();
+// pages/my/cluse/cluse.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    title: '活动规则',
     showIcon: true,
     loadingHidden: true,
-    items: [
-      { sexid: 1, value: '男' },
-      { sexid: 2, value: '女' },
-    ],
-    sex: null
   },
 
   /**
@@ -22,28 +16,7 @@ Page({
   onLoad: function (options) {
 
   },
-  radioChange: function (e) {
-    console.log(e.detail.value)
-    this.setData({
-      sex: e.detail.value
-    })
-  },
-  saveRecommendTap: function(e) {
-    console.log(e.detail)
-    const obj = {
-      customerName: e.detail.value.customerName,
-      customerPhone: e.detail.value.customerPhone,
-      sex: this.data.sex,
-      recommendName: e.detail.value.recommendName,
-      recommendPhone: e.detail.value.recommendPhone,
-      orderTime: e.detail.value.orderTime,
-      itemId: 2,
-      descr: e.detail.value.descr,
-    };
-    recommend.recommendSave(obj, (data) => {
-      console.log(data)
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,13 +1,27 @@
 <!--pages/contact/contact.wxml-->
-<navigation
-id='Navigation'
-show-icon='{{showIcon}}'
-title="{{title}}"
->
+<navigation id='Navigation' show-icon='{{showIcon}}' title="{{title}}">
 </navigation>
 <view class="content">
   <view class="container contact-container" hidden="{{!loadingHidden}}">
-    联系我们
+    <image class="logo-img" src="/images/common/logo_2.png" />
+    <view class="contact-name">李经理</view>
+    <view class="score-box flex-r">
+      <text class="iconfont icon-xiangyou"></text>
+      <text class="iconfont icon-xiangyou"></text>
+      <text class="iconfont icon-xiangyou"></text>
+      <text class="iconfont icon-xiangyou"></text>
+      <text class="iconfont icon-xiangyou"></text>
+      <view class="score">5.0</view>
+    </view>
+    <view class="introduce-one">您好，我是佰家线上平台资深服务经理，</view>
+    <view class="introduce-two">详细了解项目信息，欢迎联系我</view>
+    <button class="contact-phono flex-r" catchtap="freeTell">
+      <image class="phone-icon" src="/images/common/logo_2.png"></image>
+      <view class="phone-box">
+        <view class="top">拨打电话</view>
+        <view class="phone">136-7789-8930</view>
+      </view>
+    </button>
   </view>
   <loading hidden="{{loadingHidden}}">
     加载中...

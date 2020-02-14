@@ -1,5 +1,6 @@
 .user-box {
   padding: 30rpx 50rpx;
+  background: #fff;
 }
 
 .user-box image {

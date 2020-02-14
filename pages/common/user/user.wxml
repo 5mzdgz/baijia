@@ -1,12 +1,12 @@
 <template name="user">
   <view class="user-box flex-r">
     <image src="/images/common/logo_2.png" />
-    <view class="user-info">
-      <view class="info-top">
-        <text class="user-name">佰经理</text>
-        <text class="iconfont icon-iconfontxihuan"></text>
-      </view>
-      <view class="photo">绑定手机号</view>
+    <view class="user-info" wx:if="{{loginToken}}">
+      <text class="user-name">佰经理</text>
+      <text class="iconfont icon-iconfontxihuan"></text>
+    </view>
+    <view class="user-info" wx:else catchtap="goLoginTap">
+      <text class="user-name">点击登录/注册</text>
     </view>
   </view>
 </template>

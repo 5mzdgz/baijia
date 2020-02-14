@@ -1,0 +1,17 @@
+
+<import src="../../common/user/user.wxml"/>
+<navigation
+id='Navigation'
+show-icon='{{showIcon}}'
+title="{{title}}"
+>
+</navigation>
+<view class="content">
+  <view class="container commission-container" hidden="{{!loadingHidden}}">
+    <template is="user" />
+    <view class="content-box"></view>
+  </view>
+  <loading hidden="{{loadingHidden}}">
+    加载中...
+  </loading>
+</view>

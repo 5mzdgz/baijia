@@ -1,27 +1,33 @@
 <!--pages/my/my.wxml-->
-<import src="../common/user/user.wxml"/>
+<import src="../common/user/user.wxml" />
 
-<navigation
-id='Navigation'
-show-icon='{{showIcon}}'
-title="个人中心"
->
+<navigation id='Navigation' show-icon='{{showIcon}}' title="个人中心">
 </navigation>
 <view class="content">
   <view class="container my-container" hidden="{{!loadingHidden}}">
 
-  <template is="user" />
+    <template is="user" data="{{loginToken}}" />
 
-  <view class="set-box">
-    <view class="set-item flex-c" wx:for="{{items}}" wx:key="item.id" data-index="{{index}}" bindtap="setItemClick">
-      <image src="{{item.imgUrl}}" />
-      <text>{{item.name}}</text>
+    <view class="set-box" wx:if="{{loginToken}}">
+      <view class="set-item flex-c" wx:for="{{items}}" wx:key="item.id" data-index="{{index}}" bindtap="setItemClick">
+        <image src="{{item.imgUrl}}" />
+        <text>{{item.name}}</text>
+      </view>
     </view>
-  </view>
+
+    <view class="select-box flex-r" catchtap="freeTell">
+      <text class="left">客服电话</text>
+      <text><text class="right">0775-4582880</text>
+      <text class="iconfont icon-xiangyou"></text></text>
+    </view>
+
+    <view class="select-box flex-r" catchtap="goAboutTap">
+      <text class="left">关于我们</text>
+      <text class="iconfont icon-xiangyou"></text>
+    </view>
 
   </view>
   <loading hidden="{{loadingHidden}}">
     加载中...
   </loading>
 </view>
-

@@ -9,11 +9,12 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.4",
-	"appid": "wx4c1d3054da4c0bf7",
+	"appid": "wx36a9660db769170a",
 	"projectname": "baijia",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -39,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -94,6 +95,27 @@
 					"id": -1,
 					"name": "commission",
 					"pathName": "pages/my/commission/commission",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "phone",
+					"pathName": "pages/login/phone/phone",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "cluse",
+					"pathName": "pages/my/cluse/cluse",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "about",
+					"pathName": "pages/my/about/about",
 					"query": "",
 					"scene": null
 				}

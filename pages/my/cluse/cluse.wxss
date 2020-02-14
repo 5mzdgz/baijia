@@ -1,0 +1,2 @@
+/* pages/my/cluse/cluse.wxss */
+@import "../../common/user/user.wxss";

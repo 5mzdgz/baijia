@@ -19,14 +19,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const loginToken = wx.getStorageSync('loginToken');
+    this.setData({
+      loginToken: loginToken
+    })
+  },
+  freeTell: function() {
+    wx.makePhoneCall({
+      phoneNumber: '0775-4582880',
+    })
+  },
+  goLoginTap: function() {
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
+  },
+  goAboutTap: function() {
+    wx.navigateTo({
+      url: './about/about',
+    })
   },
   /**
    * 页面跳转
    */
   setItemClick: function(e) {
     const index = e.currentTarget.dataset.index;
-    console.log(index)
+    
     if (index === 0) {
       wx.switchTab({
         url: '/pages/recommend/recommend',
@@ -47,7 +65,7 @@ Page({
 
     if (index === 3) {
       wx.navigateTo({
-        url: './customer/customer',
+        url: './cluse/cluse',
       })
     }
   },

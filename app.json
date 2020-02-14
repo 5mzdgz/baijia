@@ -4,11 +4,14 @@
     "pages/my/my",
     "pages/earn/earn",
     "pages/my/commission/commission",
+    "pages/my/cluse/cluse",
+    "pages/my/about/about",
     "pages/detail/detail",
     "pages/residence/residence",
     "pages/recommend/recommend",
     "pages/contact/contact",
     "pages/login/login",
+    "pages/login/phone/phone",
     "components/navigation/navigation"
   ],
   "window": {
@@ -38,14 +41,14 @@
       {
         "pagePath": "pages/recommend/recommend",
         "text": "我要推荐",
-        "iconPath": "images/tab/recommend.png",
-        "selectedIconPath": "images/tab/selected_recommend.png"
+        "iconPath": "images/tab/my_selected.png",
+        "selectedIconPath": "images/tab/selected_my.png"
       },
       {
         "pagePath": "pages/contact/contact",
-        "text": "联系我们",
-        "iconPath": "images/tab/contact.png",
-        "selectedIconPath": "images/tab/selected_contact.png"
+        "text": "联系客服",
+        "iconPath": "images/tab/my_selected.png",
+        "selectedIconPath": "images/tab/selected_my.png"
       },
       {
         "pagePath": "pages/my/my",

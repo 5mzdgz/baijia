@@ -1,39 +1,19 @@
 /* pages/login/login.wxss */
 
-.login-top  {
-  position: relative;
-  background-color: #6987ac;
-  height: 382rpx;
+.recommend-login {
+  justify-content: center;
+  font-size: 26rpx;
+  margin: 50rpx;
 }
 
-.login-nav {
-  width: 100%;
-  position: absolute;
-  bottom: 0rpx;
-  height: 82rpx;
-  background-color: #6987ac;
-  color: #fff;
+.recommend-login text {
+  margin: 0 30rpx;
 }
 
-.nav-item {
-  flex: 1;
-  text-align: center;
-}
-
-.triangle {
-  width: 0;
-  height: 0;
-  border: 20rpx solid #6987ac;
-  border-color: transparent transparent #6987ac;
-}
-
-.white {
-  border: 20rpx solid #fff;
-  border-color: transparent transparent #fff;
-}
-
-.nav-item {
- 
+.line {
+  width: 210rpx;
+  height: 1px;
+  background: #ddd;
 }
 
 .btn-box {
@@ -41,47 +21,12 @@
 }
 
  button {
-  width: 50%;
-  height: 70rpx;
-  line-height: 70rpx;
-  border-radius: 35rpx;
+  width: 90%;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 20rpx;
   font-size: 26rpx;
-  background-color: #fc586c;
+  background-color: rgb(0, 201, 89);
   color: #fff;
   margin-bottom: 80rpx;
-  box-shadow: 0 20rpx 80rpx rgba(255, 0, 0, 0.4);
-}
-
-.phone {
-  width: 60%;
-  margin-left: 20%;
-  margin-top: 70rpx;
-}
-
-.phone .p-item {
-  font-size: 26rpx;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 30rpx;
-  height: 60rpx;
-}
-
-.phone .p-item text {
-  margin-top: 15rpx;
-  color: #aaa;
-  margin-right: 30rpx;
-}
-
-.phone .p-item input {
-  height: 60rpx;
-}
-
-.p-item:nth-child(4) {
-  border-bottom: none;
-  font-size: 22rpx;
-  color: #AAA;
-}
-
-.phone .login-btn {
-  width: 100%;
-  margin-top: 50rpx;
 }

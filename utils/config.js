@@ -5,6 +5,6 @@ class Config {
   }
 }
 
-Config.restUrl = 'http://192.168.1.13:8989';
+Config.restUrl = 'https://www.baijia2020.com:8989';
 
 export { Config }
