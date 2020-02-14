@@ -8,7 +8,7 @@ title="{{title}}"
 </navigation>
 <view class="content">
   <view class="container commission-container" hidden="{{!loadingHidden}}">
-    <template is="user" />
+    <template is="user" data="{{loginToken, loginUser}}" />
 
     <view class="commission-box">
       <view class="img-box flex-c">

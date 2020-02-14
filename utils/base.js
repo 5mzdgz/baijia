@@ -21,20 +21,23 @@ class Base {
       method: params.type,
       header: {
         'content-type': 'application/json',
-        'token': wx.getStorageSync('token')
+        'Authorization': wx.getStorageSync('loginToken')
       },
       success: function (res) {
         // 判断以2（2xx)开头的状态码为正确
         // 异常不要返回到回调中，就在request中处理，记录日志并showToast一个统一的错误即可
         var code = res.data.code.toString();
         var startChar = code.charAt(0);
-        if (startChar == '2') {
+        if (startChar == '2' || startChar == '9') {
           params.sCallback && params.sCallback(res.data);
         } else {
           if (code == '401') {
-            if (!noRefetch) {
-              that._refetch(params);
-            }
+            // if (!noRefetch) {
+            //   that._refetch(params);
+            // }
+            wx.navigateTo({
+              url: '/pages/login/login',
+            })
           }
           that._processError(res);
           params.eCallback && params.eCallback(res.data);

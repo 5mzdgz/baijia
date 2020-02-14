@@ -25,6 +25,10 @@ Page({
    */
   onLoad: function (options) {
     this.getSeacrhArr()
+    if (options.flag) {
+      let flag = parseInt(options.flag);
+      this.data.flag = flag
+    }
   },
   /**
    * 查询
@@ -138,10 +142,25 @@ Page({
    * 详情页
    */
   detailTap: function (e) {
-    const id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '../detail/detail?id=' + id,
-    })
+    let item = e.currentTarget.dataset.item;
+    let recommendArr = []
+    recommendArr.push(item);
+   if (this.data.flag) {
+     var pages = getCurrentPages();
+     var prevPage = pages[pages.length - 2];
+     prevPage.setData({
+       recommendArr: recommendArr
+     })
+     //console.log(prevPage.data.cpList);
+     // 获取地址id回传到确认订单页
+     wx.navigateBack({
+       delta: 1
+     })
+   } else {
+     wx.navigateTo({
+       url: '../detail/detail?id=' + item.itemId,
+     })
+   }
   },
 
   /**

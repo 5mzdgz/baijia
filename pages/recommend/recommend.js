@@ -13,7 +13,9 @@ Page({
       { sexid: 1, value: '男' },
       { sexid: 2, value: '女' },
     ],
-    sex: null
+    sex: null,
+    cursor: 140,
+    recommendArr: []
   },
 
   /**
@@ -22,14 +24,29 @@ Page({
   onLoad: function (options) {
 
   },
+  goResidenceTap: function() {
+    wx.navigateTo({
+      url: '../residence/residence?flag=1',
+    })
+  },
+  textNumTap: function(e) {
+    this.setData({
+      cursor: (140 - e.detail.cursor)
+    })
+  },
   radioChange: function (e) {
-    console.log(e.detail.value)
     this.setData({
       sex: e.detail.value
     })
   },
   saveRecommendTap: function(e) {
-    console.log(e.detail)
+    if (!this.data.recommendArr.length) {
+      wx.showToast({
+        icon: 'none',
+        title: '请选择意向楼盘',
+      })
+      return false;
+    }
     const obj = {
       customerName: e.detail.value.customerName,
       customerPhone: e.detail.value.customerPhone,
@@ -37,11 +54,37 @@ Page({
       recommendName: e.detail.value.recommendName,
       recommendPhone: e.detail.value.recommendPhone,
       orderTime: e.detail.value.orderTime,
-      itemId: 2,
+      itemId: this.data.recommendArr[0].itemId,
       descr: e.detail.value.descr,
     };
+
+    for(let key in obj) {
+      if (!obj[key]) {
+        wx.showToast({
+          icon: 'none',
+          title: '请确保每一项都填写',
+        })
+        return false;
+      }
+    }
+
     recommend.recommendSave(obj, (data) => {
-      console.log(data)
+      wx.showModal({
+        title: "",
+        content: "推荐成功",
+        showCancel: true,
+        cancelText: "继续推荐",
+        cancelColor: "#000",
+        confirmText: "返回首页",
+        confirmColor: "#0f0",
+        success: function (res) {
+          if (res.confirm) {
+            wx.switchTab({
+              url: '../home/home',
+            })
+          }
+        }
+      })
     })
   },
   /**

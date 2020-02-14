@@ -1,5 +1,4 @@
 <!--pages/my/cluse/cluse.wxml-->
-<import src="../../common/user/user.wxml"/>
 <navigation
 id='Navigation'
 show-icon='{{showIcon}}'
@@ -8,8 +7,13 @@ title="{{title}}"
 </navigation>
 <view class="content">
   <view class="container commission-container" hidden="{{!loadingHidden}}">
-    <template is="user" />
-    <view class="content-box"></view>
+    <view class="content-box">
+      <view class="item">1、提前60分钟在微信群报备,提供客户姓名+手机号码(前三后四);</view>
+      <view class="item">2、个别项目需要全号给客服进行系统报备;</view>
+      <view class="item">3、24小时内带客到访售楼部(超过24小时需要重新报备否则视为自然访客);</view>
+      <view class="item">4、业务员带领客户到访售楼部接待台填写《客户到访确认单》，客服现场扫码，公司名称统一写：佰家置业 未到访的有效，来访过视为无效，30天内为有效期限;</view>
+      <view class="item">5、首次到访的客户业务员不能指定置业顾问接待，由轮岗置业顾问接待（晚上6点后到访请务必致电客服，否则视为自然访客）。</view>
+    </view>
   </view>
   <loading hidden="{{loadingHidden}}">
     加载中...

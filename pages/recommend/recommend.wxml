@@ -1,4 +1,6 @@
 <!--pages/recommend/recommend.wxml-->
+<import src="../common/house/house.wxml"/>
+
 <navigation
 id='Navigation'
 show-icon='{{showIcon}}'
@@ -42,16 +44,21 @@ title="{{title}}"
       </view>
 
       <view class="textera-box">
-        <textarea name="descr" placeholder="填写客户描述说明，如客户意向户型、面积等" />
-        <view class="tips-right">剩余200个字</view>
+        <textarea name="descr" bindinput='textNumTap' placeholder="填写客户描述说明，如客户意向户型、面积等" />
+        <view class="tips-right">剩余{{cursor}}个字</view>
       </view>
 
-      <view class="input-item intention">
+      <view class="input-item intention" bindtap="goResidenceTap">
         <text class="label">意向楼盘</text>
         <text class="iconfont icon-xiangyou"></text>
       </view>
 
+      <view class="intention-house" wx:if="{{recommendArr.length}}">
+        <template is="house" data="{{recommendArr}}" />
+      </view>
+
       <button class="form-bottom" form-type='submit'>推荐</button>
+
     </form>
   </view>
   <loading hidden="{{loadingHidden}}">

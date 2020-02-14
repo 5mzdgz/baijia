@@ -13,7 +13,8 @@ Page({
     loadingHidden: true,
     current: 0,
     isPhone: false,
-    session_key: ''
+    session_key: '',
+    noPhone: false
   },
 
   /**
@@ -36,18 +37,30 @@ Page({
       url: './phone/phone',
     })
   },
+  cancelTap: function() {
+    this.setData({
+      noPhone: false
+    })
+  },
   bindGetUserInfo(res) {
     var that = this;
-    console.log(res)
     if (res.detail.userInfo) {
       // console.log("点击了同意授权");
       wx.login({
         success: function (e) {
           login.getCode(res, e, (data) => {
-            console.log(data)
-            that.setData({
-              // session_key: res.data.data.sessionKey
-            })
+            if (data.data.sessionKey) {
+              that.setData({
+                noPhone: true,
+                session_key: data.data.sessionKey
+              })
+            } else {
+              const  loginToken = JSON.parse(data.data).token;
+              wx.setStorageSync('loginToken', loginToken);
+              wx.switchTab({
+                url: '../my/my',
+              })
+            }
           })
         }
       })
@@ -60,7 +73,6 @@ Page({
    */
   getPhoneNumber: function (e) {
     let that = this;
-    console.log(e);
 
     if (e.detail.errMsg !== "getPhoneNumber:ok") {
       return;
@@ -74,9 +86,12 @@ Page({
     wx.checkSession({
       success(res) {
         // session_key 未过期，并且在本生命周期一直有效
-        console.log(res);
         login.getPhone(e, that.data.session_key, (data) => {
-          console.log(data)
+          const loginToken = JSON.parse(data.data).token;
+          wx.setStorageSync('loginToken', loginToken);
+          wx.switchTab({
+            url: '../my/my',
+          })
         });
       },
       fail(err) {

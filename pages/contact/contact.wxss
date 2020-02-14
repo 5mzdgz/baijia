@@ -23,6 +23,12 @@ page {
   padding: 20rpx 0;
 }
 
+.score-box text {
+  padding: 0 5rpx;
+  font-size: 38rpx;
+  color: #ff5400;
+}
+
 .score {
   background:  #ff5400;
   color: #fff;
@@ -41,17 +47,18 @@ page {
 
 .contact-phono {
   justify-content: center;
-  padding: 30rpx 0;
+  padding: 0;
   border-radius: 0;
   border-top: 1px solid #ddd;
   box-shadow: 0 5rpx 10rpx rgba(0, 0, 0, 0.016);
 }
 
 .phone-icon {
-  width: 110rpx;
-  height: 110rpx;
+  font-size: 80rpx;
+  background-image: -webkit-linear-gradient(top, rgb(87, 251, 182),rgba(164, 252, 223,1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
 .phone-box {
   margin-left: 40rpx;
   height: 110rpx;

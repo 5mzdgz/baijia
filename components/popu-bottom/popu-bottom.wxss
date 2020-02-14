@@ -1,0 +1,22 @@
+/* components/popu-bottom.wxss */
+.hide-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+.anth-box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}

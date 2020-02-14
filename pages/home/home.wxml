@@ -42,18 +42,18 @@ title="佰家购房平台"
         <text class="label-sub">更多服务</text>
       </view>
 
-      <view class="buy-item flex-r">
+      <view class="buy-item">
         <view class="img-box" wx:for="{{buyArr}}" wx:key="{{index}}" data-index="{{index}}" bindtap="residenceTap">
           <image src="{{item.imgUrl}}" />
           <view class="item-name">{{item.name}}</view>
-          <view class="item-ename">{{item.ename}}</view>
+          <!-- <view class="item-ename">{{item.ename}}</view> -->
         </view>
       </view>
     </view>
 
     <view class="activity-box">
       <view class="label">热门活动</view>
-      <image src="/images/home/activity.png" />
+      <image src="/images/home/activity.png" catchtap="navitoTap" />
     </view>
 
     <view class="recommend-box">

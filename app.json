@@ -6,6 +6,7 @@
     "pages/my/commission/commission",
     "pages/my/cluse/cluse",
     "pages/my/about/about",
+    "pages/my/nickname/nickname",
     "pages/detail/detail",
     "pages/residence/residence",
     "pages/recommend/recommend",
@@ -35,25 +36,25 @@
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "images/tab/home_selected.png",
+        "iconPath": "images/tab/home.png",
         "selectedIconPath": "images/tab/selected_home.png"
       },
       {
         "pagePath": "pages/recommend/recommend",
         "text": "我要推荐",
-        "iconPath": "images/tab/my_selected.png",
-        "selectedIconPath": "images/tab/selected_my.png"
+        "iconPath": "images/tab/recommend.png",
+        "selectedIconPath": "images/tab/selected_recommend.png"
       },
       {
         "pagePath": "pages/contact/contact",
         "text": "联系客服",
-        "iconPath": "images/tab/my_selected.png",
-        "selectedIconPath": "images/tab/selected_my.png"
+        "iconPath": "images/tab/serve.png",
+        "selectedIconPath": "images/tab/selected_serve.png"
       },
       {
         "pagePath": "pages/my/my",
         "text": "我的",
-        "iconPath": "images/tab/my_selected.png",
+        "iconPath": "images/tab/my.png",
         "selectedIconPath": "images/tab/selected_my.png"
       }
     ]

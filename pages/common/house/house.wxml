@@ -1,6 +1,6 @@
 
 <template name="house">
-  <view class="recommend-item" wx:for="{{recommendArr}}" wx:key="{{index}}" data-id="{{item.itemId}}" bindtap="detailTap">
+  <view class="recommend-item" wx:for="{{recommendArr}}" wx:key="{{index}}" data-item="{{item}}" bindtap="detailTap">
     <image src="{{item.itemImage}}" />
     <view class="recommend-info">
       <view class="title flex-r pd-btm">

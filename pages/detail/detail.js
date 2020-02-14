@@ -23,7 +23,8 @@ Page({
     hcurrent: 0,
     slider: [],
     hslider: [],
-    dData: {}
+    dData: {},
+    subkey: '66IBZ-RQRKV-25IPI-UMF6H-S2XSJ-KCFRO'
   },
 
   /**
@@ -97,7 +98,6 @@ Page({
     let self = this
     wx.getLocation({
       success: function (res) {
-        console.log(res)
         self.setData({
           longitude: res.longitude,
           latitude: res.latitude
@@ -120,7 +120,7 @@ Page({
     let self = this;
     // 实例化腾讯地图API核心类  
     qqmapsdk = new QQMapWX({
-      key: '5MUBZ-PKSK3-BXL3V-36KSL-UNWCJ-32FL4'
+      key: this.data.subkey
     });
     // this.mapCtx = wx.createMapContext('myMap');
     // 腾讯地图调用接口  
@@ -130,7 +130,6 @@ Page({
         longitude: longitude
       },
       success: function (res) {
-        console.log(res)
         self.setData({
           markers: [{
             id: 0,
@@ -144,16 +143,23 @@ Page({
         })
       },
       fail: function (res) {
-        console.log(res);
       },
       complete: function (res) {
       }
     });
   },
+  clickShow: function () {
+    this.showBottom.showModal()
+  },
+  cancelPopuTap: function() {
+    this.showBottom.hideModal();
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    this.showBottom = this.selectComponent('#showBottom');
 
   },
 

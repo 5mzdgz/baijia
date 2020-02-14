@@ -1,6 +1,6 @@
 import { Base } from '../../utils/base.js';
 
-class Recommend extends Base {
+class Earn extends Base {
   constructor() {
     super();
   }
@@ -8,18 +8,18 @@ class Recommend extends Base {
   /**
    * 获取热门推荐
    */
-  recommendSave(obj, callback) {
+  earnData(obj, callback) {
     const param = {
-      url: '/recommend/add',
+      url: '/item/commissionList',
       type: 'post',
       data: obj,
       sCallback: function (data) {
-        callback && callback(data);
+        callback && callback(data.data);
       }
     }
-    this.request(param);
+    this.request(param)
   }
 
 }
 
-export { Recommend }
+export { Earn }

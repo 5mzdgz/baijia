@@ -1,38 +1,36 @@
-// pages/earn/earn.js
-import { Earn } from './earn-model.js';
-let earn = new Earn();
+// pages/my/nickname/nickname.js
+import { My } from '../my-model.js';
+let my = new My();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    showIcon: true,
-    loadingHidden: true,
-    title: '赚取佣金',
-    earnArr: []
+    showIcon: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getEarnData();
-  },
-  getEarnData: function() {
-    const obj = {
-      page: 1,
-      pageSize: 100
-    }
-    earn.earnData(obj, (data) => {
-      this.setData({
-        earnArr: data.records
-      })
+    var nickName = options.nickName;
+    this.data.userId = options.userId;
+    this.setData({
+      nickName: nickName
     })
   },
-  goEarnTap: function() {
-    wx.switchTab({
-      url: '../recommend/recommend',
+
+  bindFormSubmit: function (e) {
+    let tNickname = e.detail.value.textarea;
+    const obj = {
+      userId: this.data.userId,
+      nickName: tNickname
+    }
+    my.avatarUrl(obj, (data) => {
+      wx.navigateBack({
+        delta: 1
+      })
     })
   },
 
@@ -85,3 +83,4 @@ Page({
 
   }
 })
+

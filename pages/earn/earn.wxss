@@ -1,6 +1,7 @@
 /* pages/earn/earn.wxss */
 page {
   background: #f1f1f1;
+  padding-bottom: 150rpx;
 }
 
 .earn-box {

@@ -1,2 +1,9 @@
 /* pages/my/cluse/cluse.wxss */
-@import "../../common/user/user.wxss";
+.content-box {
+  padding: 30rpx;
+  font-size: 28rpx
+}
+
+.item {
+  padding: 10rpx 0;
+}

@@ -6,15 +6,32 @@
 .user-box image {
   width: 120rpx;
   height: 120rpx;
+  border-radius: 100%;
 }
 
 .user-info {
+  width: 80%;
   margin-left: 35rpx;
+  justify-content: space-between;
 }
 
 .user-info .user-name {
   font-weight: 900;
   margin-right: 20rpx;
+  width: 400rpx;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  -webkit-box-orient:vertical;
+  overflow: hidden;
+
+}
+
+.user-info text {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #888;
 }
 
 .user-info .photo {

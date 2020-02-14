@@ -1,0 +1,8 @@
+<!--components/popu-bottom.wxml-->
+<view class="show-box" wx:if="{{showPop}}">
+  <view class="hide-box" bindtap="hideModal"></view>
+  <view class="anth-box" animation='{{animationData}}'>
+    <view></view>
+    <slot></slot>
+  </view>
+</view>

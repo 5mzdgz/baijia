@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "navigation": "../../components/navigation/navigation"
+    "navigation": "../../components/navigation/navigation",
+    "popu-bottom": "../../components/popu-bottom/popu-bottom"
   }
 }

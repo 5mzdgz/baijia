@@ -1,9 +1,9 @@
 <template name="user">
   <view class="user-box flex-r">
-    <image src="/images/common/logo_2.png" />
-    <view class="user-info" wx:if="{{loginToken}}">
-      <text class="user-name">佰经理</text>
-      <text class="iconfont icon-iconfontxihuan"></text>
+    <image catchtap="changeHead" src="{{loginUser.icon?loginUser.icon:'/images/common/logo_2.png'}}" />
+    <view class="user-info flex-r" wx:if="{{loginToken}}" catchtap="nickNameTap">
+      <view class="user-name">{{loginUser.nickName?loginUser.nickName:'未填写'}}</view>
+      <text class="iconfont icon-qiehuanshexiangtou" catchtap="downlogin"></text>
     </view>
     <view class="user-info" wx:else catchtap="goLoginTap">
       <text class="user-name">点击登录/注册</text>

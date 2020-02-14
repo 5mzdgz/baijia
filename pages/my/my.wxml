@@ -6,7 +6,7 @@
 <view class="content">
   <view class="container my-container" hidden="{{!loadingHidden}}">
 
-    <template is="user" data="{{loginToken}}" />
+    <template is="user" data="{{loginToken, loginUser}}" />
 
     <view class="set-box" wx:if="{{loginToken}}">
       <view class="set-item flex-c" wx:for="{{items}}" wx:key="item.id" data-index="{{index}}" bindtap="setItemClick">
@@ -19,11 +19,6 @@
       <text class="left">客服电话</text>
       <text><text class="right">0775-4582880</text>
       <text class="iconfont icon-xiangyou"></text></text>
-    </view>
-
-    <view class="select-box flex-r" catchtap="goAboutTap">
-      <text class="left">关于我们</text>
-      <text class="iconfont icon-xiangyou"></text>
     </view>
 
   </view>

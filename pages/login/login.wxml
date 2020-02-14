@@ -15,12 +15,21 @@ title="登录"
       <view class="line"></view>
     </view>
 
-    <view class="btn-box" wx:if="{{!isPhone}}">
+    <view class="btn-box">
       <button lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
-      <text class="iconfont icon-xiangyou"></text>
+      <text class="iconfont icon-weixin"></text>
       微信登录</button>
-      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
-      <button catchtap="goLoginPhone"><text class="iconfont icon-xiangyou"></text>手机号登录</button>
+      <view class="auth-box" wx:if="{{noPhone}}">
+        <view class="content-box">
+          <view class="title">佰家购平台</view>
+          <view class="content">微信授权登录并授权获取手机号码</view>
+          <view class="auth-btn-box flex-r">
+            <button class="cancel" catchtap="cancelTap">取消</button>
+            <button class="comfrim" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">确认</button>
+          </view>
+        </view>
+      </view>
+      <button catchtap="goLoginPhone"><text class="iconfont icon-weibiaoti1"></text>手机号登录</button>
     </view>
 
   </view>

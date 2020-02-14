@@ -1,4 +1,7 @@
 // pages/my/my.js
+import { My } from './my-model.js';
+import { Config } from '../../utils/config.js'
+let my = new My();
 Page({
 
   /**
@@ -12,17 +15,15 @@ Page({
       { id: 2, name: '我的客户', imgUrl: '/images/common/customer.png' },
       { id: 3, name: '我的佣金', imgUrl: '/images/common/my_commission.png' },
       { id: 4, name: '活动规则', imgUrl: '/images/common/activitiy.png' }
-    ]
+    ],
+    loginUser: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const loginToken = wx.getStorageSync('loginToken');
-    this.setData({
-      loginToken: loginToken
-    })
+    
   },
   freeTell: function() {
     wx.makePhoneCall({
@@ -34,9 +35,90 @@ Page({
       url: '/pages/login/login',
     })
   },
-  goAboutTap: function() {
+  nickNameTap: function() {
     wx.navigateTo({
-      url: './about/about',
+      url: './nickname/nickname?nickName=' + this.data.loginUser.nickName + '&userId=' + this.data.loginUser.userId,
+    })
+  },
+  changeHead: function () {
+    var that = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        var tempFilePaths = res.tempFilePaths;
+        that.updateImg(that, tempFilePaths)
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  updateImg: function (that, path) {
+    let loginUser = this.data.loginUser;
+    wx.showToast({
+      icon: "loading",
+      title: "正在上传"
+    })
+    wx.uploadFile({
+      url: Config.restUrl + '/upload/userIcon',
+      method: 'post',
+      filePath: path[0],
+      name: 'file',
+      header: {
+        'content-type': 'application/json',
+        'Authorization': wx.getStorageSync('loginToken')
+      },
+      success: function (res) {
+        if (res.statusCode != 200) {
+          wx.showToast({
+            icon: "loading",
+            duration: 1000,
+            title: "上传失败"
+          })
+        } else {
+          const obj = {
+            userId: loginUser.userId,
+            icon: JSON.parse(res.data).date
+          }
+          my.avatarUrl(obj, (data) => {
+            loginUser.icon = JSON.parse(res.data).date;
+            //上传成功修改显示头像
+            that.setData({ 
+              loginUser: loginUser
+            })
+          })
+        }
+      },
+      fail: function (e) {
+        wx.showToast({
+          icon: "loading",
+          duration: 1000,
+          title: "上传失败"
+        })
+      },
+      complete: function () {
+        wx.hideToast(); //隐藏Toast
+      }
+    })
+  },
+  downlogin: function() {
+    wx.showModal({
+      title: "温馨提示",
+      content: "切换账号",
+      showCancel: true,
+      cancelText: "取消",
+      cancelColor: "#000",
+      confirmText: "确定",
+      confirmColor: "#0f0",
+      success: function (res) {
+        if (res.confirm) {
+          wx.removeStorageSync('loginToken');
+          wx.navigateTo({
+            url: '../login/login',
+          })
+        }
+      }
     })
   },
   /**
@@ -81,7 +163,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    const loginToken = wx.getStorageSync('loginToken');
+    if (loginToken) {
+      my.userData((data) => {
+        wx.setStorageSync('loginUser', data.loginUser);
+        this.setData({
+          loginUser: data.loginUser,
+          loginToken: loginToken
+        })
+      })
+    }
   },
 
   /**

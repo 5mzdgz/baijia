@@ -65,7 +65,6 @@ Page({
         }
       }, 1000)
       phone.phoneCode(ph, (data) => {
-        console.log(data);
         if (data.data != '发送成功') {
           wx.showToast({
             icon: 'none',
@@ -82,9 +81,7 @@ Page({
 
   phoneLoginTap: function(e) {
     phone.phoneLogin(e.detail.value.phone, e.detail.value.code, (data) => {
-      console.log(data)
       const loginToken = JSON.parse(data.data).token;
-      console.log(loginToken)
       if (loginToken) {
         wx.setStorageSync('loginToken', loginToken);
         wx.switchTab({
