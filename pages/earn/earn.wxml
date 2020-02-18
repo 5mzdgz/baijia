@@ -38,6 +38,10 @@ title="{{title}}"
       <button class="save-ommission" bindtap="goEarnTap">申请加入赚取佣金</button>
     </view>
   </view>
+  <view class="tips">
+    <view>广西维界信息科技有限公司技术支持</view>
+    <view>联系电话：13420903823</view>
+  </view>
   <loading hidden="{{loadingHidden}}">
     加载中...
   </loading>

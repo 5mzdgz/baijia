@@ -8,6 +8,8 @@ Page({
   data: {
     showIcon: true,
     loadingHidden: true,
+    noData: false,
+    navTitle: '搜索',
     navArr: [
       { navName: '区域', checked: false, searchData: [] },
       { navName: '价格', checked: false, searchData: [] },
@@ -16,7 +18,10 @@ Page({
     ],
     searchData: {},
     selected: -1,
-    obj: {},
+    obj: {
+      page: 1,
+      pageSize: 10
+    },
     recommendArr: []
   },
 
@@ -29,6 +34,15 @@ Page({
       let flag = parseInt(options.flag);
       this.data.flag = flag
     }
+    if (options.type) {
+      this.data.obj['type'] = options.type
+      this.setData({
+        navTitle: options.type
+      })
+    } else {
+      this.data.obj['area'] = '不限';
+    }
+    this.getNameSaerchArr(this.data.obj);
   },
   /**
    * 查询
@@ -39,15 +53,32 @@ Page({
     })
     let obj = this.data.obj;
     obj['name'] = e.detail.value
+    this.getNameSaerchArr(obj);
+  },
+  getNameSaerchArr: function (obj) {
     residence.nameSaerch(obj, (data) => {
+      // console.log(data);
+      let recommendArr = this.data.recommendArr;
+      if (obj.page > 1) {
+        if (data.records.length > 0) {
+          data.records.forEach(item => {
+            recommendArr.push(item);
+          })
+        } else {
+          this.setData({
+            noData: true
+          })
+        }
+      } else {
+        recommendArr = data.records
+      }
       this.setData({
-        recommendArr: data.records,
-        obj: {}
+        recommendArr: recommendArr,
       })
     })
   },
   /**
-   * 选择类型，小箱
+   * 选择类型，小项
    */
   navItemTap: function(e) {
     this.setData({
@@ -80,11 +111,7 @@ Page({
     //   type = navArr[3].searchData[index].descr
     // }
   
-    residence.nameSaerch(obj, (data) => {
-      this.setData({
-        recommendArr: data.records
-      })
-    })
+    this.getNameSaerchArr(obj);
 
     this.setData({
       navArr: navArr,
@@ -108,7 +135,7 @@ Page({
    */
   getSeacrhArr: function() {
     residence.searchData((data) => {
-
+      // console.log(data)
       let navArr = this.data.navArr
       data.forEach(item => {
         if (item.searchType === 1){
@@ -195,14 +222,18 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+    this.getSeacrhArr();
+    this.getNameSaerchArr(this.data.obj);
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+    if (!this.data.noData) {
+      this.data.obj.page++;
+      this.getNameSaerchArr(this.data.obj);
+    } 
   },
 
   /**

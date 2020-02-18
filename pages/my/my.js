@@ -47,6 +47,7 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success: function (res) {
+        console.log(res)
         var tempFilePaths = res.tempFilePaths;
         that.updateImg(that, tempFilePaths)
       },
@@ -70,6 +71,7 @@ Page({
         'Authorization': wx.getStorageSync('loginToken')
       },
       success: function (res) {
+        console.log(res)
         if (res.statusCode != 200) {
           wx.showToast({
             icon: "loading",

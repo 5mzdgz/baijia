@@ -43,7 +43,7 @@ title="佰家购房平台"
       </view>
 
       <view class="buy-item">
-        <view class="img-box" wx:for="{{buyArr}}" wx:key="{{index}}" data-index="{{index}}" bindtap="residenceTap">
+        <view class="img-box" wx:for="{{buyArr}}" wx:key="{{index}}" data-item="{{item}}" bindtap="residenceTap">
           <image src="{{item.imgUrl}}" />
           <view class="item-name">{{item.name}}</view>
           <!-- <view class="item-ename">{{item.ename}}</view> -->
@@ -64,6 +64,11 @@ title="佰家购房平台"
       </view>
 
       <template is="house" data="{{recommendArr}}" />
+
+      <view class="tips" wx:if="{{noData}}">
+        <view>广西维界信息科技有限公司技术支持</view>
+        <view>联系电话：13420903823</view>
+      </view>
     </view>
   </view>
   <loading hidden="{{loadingHidden}}">

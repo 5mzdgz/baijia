@@ -18,6 +18,10 @@ Page({
    */
   onLoad: function (options) {
     this.getEarnData();
+    let invte_user_code = decodeURIComponent(options.user_code);
+    if (invte_user_code) {
+      wx.setStorageSync('invte_user_code', invte_user_code);
+    }
   },
   getEarnData: function() {
     const obj = {
@@ -82,6 +86,18 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let path;
+    let loginToken = wx.getStorageSync('loginToken');
+    let user_code = wx.getStorageSync('loginUser').userCode;
+    if (loginToken) {
+      path = '/pages/earn/earn?user_code=' + user_code;
+    } else {
+      path = '/pages/earn/earn';
+    }
+    return {
+      title: '佰家房产超市',
+      path: path,
+      imageUrl: 'https://baijia-1301025608.cos.ap-shanghai.myqcloud.com/dbd702fd793044ca9a622e9ce98992b4.jpg'
+    }
   }
 })

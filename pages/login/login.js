@@ -57,8 +57,8 @@ Page({
             } else {
               const  loginToken = JSON.parse(data.data).token;
               wx.setStorageSync('loginToken', loginToken);
-              wx.switchTab({
-                url: '../my/my',
+              wx.navigateBack({//返回
+                delta: 1
               })
             }
           })
@@ -86,11 +86,12 @@ Page({
     wx.checkSession({
       success(res) {
         // session_key 未过期，并且在本生命周期一直有效
-        login.getPhone(e, that.data.session_key, (data) => {
+        let invte_user_code = wx.getStorageSync('invte_user_code');
+        login.getPhone(e, that.data.session_key, invte_user_code, (data) => {
           const loginToken = JSON.parse(data.data).token;
           wx.setStorageSync('loginToken', loginToken);
-          wx.switchTab({
-            url: '../my/my',
+          wx.navigateBack({//返回
+            delta: 1
           })
         });
       },

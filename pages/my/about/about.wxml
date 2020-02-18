@@ -14,6 +14,10 @@ title="{{title}}"
       <view class="contact">公司电话：0775-4582880</view>
     </view>
   </view>
+  <view class="tips">
+    <view>广西维界信息科技有限公司技术支持</view>
+    <view>联系电话：13420903823</view>
+  </view>
   <loading hidden="{{loadingHidden}}">
     加载中...
   </loading>

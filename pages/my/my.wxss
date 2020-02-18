@@ -56,3 +56,11 @@ page {
   margin-right: 30rpx;
   color: #888;
 }
+
+.tips {
+  color: #aaa;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  text-align: center;
+  margin-top: 40rpx;
+}

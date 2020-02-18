@@ -23,15 +23,16 @@ class Phone extends Base {
   }
 
   /**
-   * 绑定手机号
+   * 手机登录
    */
-  phoneLogin(phone, code, callback) {
+  phoneLogin(phone, code, invte_user_code, callback) {
     const param = {
       url: '/sms/smsLogin',
       type: 'post',
       data: {
         phone: phone,
-        code: code
+        code: code,
+        user_code: invte_user_code
       },
       sCallback: function (data) {
         callback && callback(data);

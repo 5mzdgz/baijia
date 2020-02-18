@@ -18,10 +18,20 @@
     <button class="contact-phono flex-r" catchtap="freeTell">
       <text class="iconfont icon-dianhua1 phone-icon"></text>
       <view class="phone-box">
-        <view class="top">拨打电话</view>
-        <view class="phone">136-7789-8930</view>
+        <view class="top">电话客服</view>
+        <!-- <view class="phone">136-7789-8930</view> -->
       </view>
     </button>
+    <button class="contact-phono flex-r" open-type="contact">
+      <text class="iconfont icon-weixin phone-icon"></text>
+      <view class="phone-box">
+        <view class="top">微信客服</view>
+      </view>
+    </button>
+  </view>
+  <view class="tips">
+    <view>广西维界信息科技有限公司技术支持</view>
+    <view>联系电话：13420903823</view>
   </view>
   <loading hidden="{{loadingHidden}}">
     加载中...

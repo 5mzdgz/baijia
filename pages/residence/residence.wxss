@@ -119,3 +119,11 @@
 .house-box {
   padding: 30rpx 45rpx;
 }
+
+.tips {
+  color: #aaa;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  text-align: center;
+  margin-top: 40rpx;
+}

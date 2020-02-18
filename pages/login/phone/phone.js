@@ -80,12 +80,13 @@ Page({
   },
 
   phoneLoginTap: function(e) {
-    phone.phoneLogin(e.detail.value.phone, e.detail.value.code, (data) => {
+    let invte_user_code = wx.getStorageSync('invte_user_code');
+    phone.phoneLogin(e.detail.value.phone, e.detail.value.code, invte_user_code, (data) => {
       const loginToken = JSON.parse(data.data).token;
       if (loginToken) {
         wx.setStorageSync('loginToken', loginToken);
-        wx.switchTab({
-          url: '../../my/my',
+        wx.navigateBack({//返回
+          delta: 2
         })
       }
     })

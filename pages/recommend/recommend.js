@@ -1,5 +1,7 @@
 // pages/recommend/recommend.js
 import { Recommend } from './recommend-model.js';
+import { My } from '../my/my-model.js';
+let my = new My();
 let recommend = new Recommend();
 Page({
 
@@ -22,7 +24,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+  
   },
   goResidenceTap: function() {
     wx.navigateTo({
@@ -88,6 +90,15 @@ Page({
     })
   },
   /**
+   * 详情页
+   */
+  detailTap: function (e) {
+    const item = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '../detail/detail?id=' + item.itemId,
+    })
+  },
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
@@ -98,7 +109,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    const loginToken = wx.getStorageSync('loginToken');
+    if (loginToken) {
+      my.userData((data) => {
+        wx.setStorageSync('loginUser', data.loginUser);
+      })
+    } else {
+      wx.navigateTo({
+        url: '../login/login',
+      })
+    }
   },
 
   /**

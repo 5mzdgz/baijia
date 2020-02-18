@@ -43,7 +43,7 @@
           <view class="title">是否有优惠</view>
           <view class="sub">点击咨询置业顾问看房</view>
         </view>
-        <button catchtap="clickShow">优惠咨询</button>
+        <button catchtap="clickShow" class="coupon-btn">优惠咨询</button>
       </view>
     </view>
 
@@ -56,6 +56,24 @@
           <text class="content">2019年10月20</text>
         </view> -->
       </view>
+    </view>
+
+    <view class="project-new">
+      <view class="label-title">项目最新动态</view>
+      <scroll-view scroll-y="true" style='max-height: 600rpx' bindscrolltolower="bindscrolltolower">
+        <view class="project-box">
+          <view class="project-item" wx:for="{{projectdyc}}" wx:for-item="projectItem" wx:key>
+            <view class="time-box flex-r">
+              <view class="dian"></view>
+              <text class="time">{{projectItem.dynamicTime}}</text>
+            </view>
+            <view class="new-box">
+              <view class="new-title">{{projectItem.dynamicName}}</view>
+              <view class="new-content">{{projectItem.dynamicDesc}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
     </view>
 
     <view class="diagram">
@@ -98,27 +116,37 @@
         <view class="right" catchtap="cancelPopuTap">×</view>
       </view>
       <view class="content-box">
-        <image class="logo-img" src="/images/common/logo_2.png" />
-        <view class="coFntact-name">李经理</view>
-        <view class="score-box flex-r">
-          <text class="iconfont icon-pingfen_xuanzhong"></text>
-          <text class="iconfont icon-pingfen_xuanzhong"></text>
-          <text class="iconfont icon-pingfen_xuanzhong"></text>
-          <text class="iconfont icon-pingfen_xuanzhong"></text>
-          <text class="iconfont icon-pingfen_xuanzhong"></text>
-          <view class="score">5.0</view>
-        </view>
-        <view class="introduce-one">您好，我是佰家线上平台资深服务经理，</view>
-        <view class="introduce-two">详细了解项目信息，欢迎联系我</view>
-        <button class="contact-phono flex-r" catchtap="freeTell">
-          <text class="iconfont icon-dianhua1 phone-icon"></text>
-          <view class="phone-box">
-            <view class="top">拨打电话</view>
-            <view class="phone">136-7789-8930</view>
+        <scroll-view scroll-y="true" style='height: 500rpx'>
+          <view class="content-item flex-r" wx:for="{{memberArr}}" wx:for-item="memItem" wx:key>
+            <image class="logo-img" src="{{memItem.userIcon}}" />
+            <view class="middle">
+              <view class="top">
+                <text class="user-name">{{memItem.userName}}</text>
+                <text class="iconfont icon-pingfen_xuanzhong"></text>
+                <text class="sub">{{memItem.position}}</text>
+              </view>
+              <view class="bottom flex-r">
+                <view class="current">当前项目</view>
+                <text class="selected">查看名片</text>
+                <text class="iconfont icon-pingfen_xuanzhong"></text>
+              </view>
+            </view>
+            <view class="contact-right flex-r">
+              <view class="contact-phone" data-item="{{memItem}}" catchtap="freeTap">
+                <text class="iconfont icon-dianhua"></text>
+              </view>
+              <button open-type="contact" class="contact-phone">
+                <text class="iconfont icon-kefuerji"></text>
+              </button>
+            </view>
           </view>
-        </button>
+        </scroll-view>
       </view>
     </popu-bottom>
+    <view class="tips">
+      <view>广西维界信息科技有限公司技术支持</view>
+      <view>联系电话：13420903823</view>
+    </view>
   </view>
   <loading hidden="{{loadingHidden}}">
     加载中...

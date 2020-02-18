@@ -73,3 +73,11 @@
 .auth-btn-box .comfrim {
   border-bottom-right-radius: 16rpx;
 }
+
+.tips {
+  color: #aaa;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  text-align: center;
+  margin-top: 40rpx;
+}

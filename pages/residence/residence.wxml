@@ -4,7 +4,7 @@
 <navigation
 id='Navigation'
 show-icon='{{showIcon}}'
-title="住宅"
+title="{{navTitle}}"
 >
 </navigation>
 <view class="content">
@@ -30,6 +30,11 @@ title="住宅"
 
     <view class="house-box">
       <template is="house" data="{{recommendArr}}" />
+    </view>
+
+    <view class="tips" wx:if="{{noData}}">
+      <view>广西维界信息科技有限公司技术支持</view>
+      <view>联系电话：13420903823</view>
     </view>
   </view>
   <loading hidden="{{loadingHidden}}">

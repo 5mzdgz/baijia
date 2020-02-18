@@ -15,6 +15,10 @@ title="{{title}}"
       <view class="item">5、首次到访的客户业务员不能指定置业顾问接待，由轮岗置业顾问接待（晚上6点后到访请务必致电客服，否则视为自然访客）。</view>
     </view>
   </view>
+  <view class="tips">
+    <view>广西维界信息科技有限公司技术支持</view>
+    <view>联系电话：13420903823</view>
+  </view>
   <loading hidden="{{loadingHidden}}">
     加载中...
   </loading>

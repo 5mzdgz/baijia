@@ -89,3 +89,11 @@ page {
   border-radius: 20rpx;
   background: linear-gradient(to right, #f3a81c, #ff5400);
 }
+
+.tips {
+  color: #aaa;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  text-align: center;
+  margin-top: 40rpx;
+}

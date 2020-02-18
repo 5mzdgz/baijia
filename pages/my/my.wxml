@@ -20,7 +20,10 @@
       <text><text class="right">0775-4582880</text>
       <text class="iconfont icon-xiangyou"></text></text>
     </view>
-
+    <view class="tips">
+      <view>广西维界信息科技有限公司技术支持</view>
+      <view>联系电话：13420903823</view>
+    </view>
   </view>
   <loading hidden="{{loadingHidden}}">
     加载中...

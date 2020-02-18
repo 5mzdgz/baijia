@@ -42,14 +42,15 @@ page {
 }
 
 .introduce-two {
-  margin-bottom: 40rpx;
+  padding-bottom: 40rpx;
+  border-bottom: 1px solid #ddd;
 }
 
 .contact-phono {
   justify-content: center;
   padding: 0;
   border-radius: 0;
-  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   box-shadow: 0 5rpx 10rpx rgba(0, 0, 0, 0.016);
 }
 
@@ -59,10 +60,11 @@ page {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .phone-box {
   margin-left: 40rpx;
-  height: 110rpx;
-  line-height: 55rpx;
+  /* height: 110rpx; */
+  /* line-height: 55rpx; */
   text-align: left;
   color: #555;
 }
@@ -70,4 +72,12 @@ page {
 .phone {
   font-size: 40rpx;
   font-weight: bold;
+}
+
+.tips {
+  color: #aaa;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  text-align: center;
+  margin-top: 40rpx;
 }

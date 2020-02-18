@@ -26,7 +26,10 @@ Page({
       { imgUrl: '/images/common/earn_commission.png', name: '赚取佣金', ename: '' },
       { imgUrl: '/images/common/logo_1.png', name: '平台介绍', ename: '' },
     ],
-    recommendArr: []
+    recommendArr: [],
+    page: 1,
+    pageSize: 10,
+    noData: false
   },
 
   /**
@@ -34,6 +37,12 @@ Page({
    */
   onLoad: function (options) {
     this.getRecommendData(1, 10);
+    // 分享邀请
+    let invte_user_code = decodeURIComponent(options.user_code);
+    console.log(invte_user_code)
+    if (invte_user_code) {
+      wx.setStorageSync('invte_user_code', invte_user_code);
+    }
   },
   swiperBannerChange: function (e) {
     this.setData({
@@ -44,21 +53,37 @@ Page({
    * 住宅
    */
   residenceTap: function(e) {
-    const index = e.currentTarget.dataset.index;
-    if (index < 3) {
-      wx.navigateTo({
-        url: '../residence/residence',
-      })
-    }
-    if (index === 4) {
-      wx.navigateTo({
-        url: '../earn/earn',
-      })
-    }
-    if (index === 5) {
-      wx.navigateTo({
-        url: '../my/about/about',
-      })
+    const item = e.currentTarget.dataset.item;
+    switch (item.name) {
+      case '住宅':
+        wx.navigateTo({
+          url: '../residence/residence?type=' + item.name,
+        })
+        break;
+      case '商铺':
+        wx.navigateTo({
+          url: '../residence/residence?type=' + item.name,
+        })
+      break;
+      case '院墅':
+        wx.navigateTo({
+          url: '../residence/residence?type=' + item.name,
+        })
+        break;
+      case '物业投资':
+        wx.navigateTo({
+          url: '../residence/residence?type=' + item.name,
+        })
+        break;
+      case '赚取佣金':
+        wx.navigateTo({
+          url: '../earn/earn',
+        })
+        break;
+      default:
+        wx.navigateTo({
+          url: '../my/about/about',
+        })
     }
   },
   /**
@@ -88,9 +113,23 @@ Page({
    */
   getRecommendData: function(page, pageSize) {
     home.recommendData(page, pageSize, (data) => {
+      let recommendArr = this.data.recommendArr;
+      if (page > 1) {
+        if(data.length > 0) {
+          data.forEach(item => {
+            recommendArr.push(item)
+          })
+        } else {
+          this.setData({
+            noData: true
+          })
+        }
+      } else {
+        recommendArr = data
+      }
       this.setData({
-        recommendArr: data
-      })
+        recommendArr: recommendArr
+      });
     })
   },
   /**
@@ -125,20 +164,38 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      page: 1
+    });
+    this.getRecommendData(1, this.data.pageSize);
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if(!this.data.noData) {
+      this.data.page++;
+      this.getRecommendData(this.data.page, this.data.pageSize);
+    }
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let path;
+    let loginToken = wx.getStorageSync('loginToken');
+    let user_code = wx.getStorageSync('loginUser').userCode;
+    if (loginToken) {
+      path = '/pages/home/home?user_code=' + user_code;
+    } else {
+      path = '/pages/home/home';
+    }
+    return {
+      title: '佰家房产超市',
+      path: path,
+      imageUrl: 'https://baijia-1301025608.cos.ap-shanghai.myqcloud.com/dbd702fd793044ca9a622e9ce98992b4.jpg'
+    }
   }
 })

@@ -120,7 +120,7 @@ swiper {
   color: #bbb;
 }
 
-button {
+.coupon-btn {
   flex: 1;
   font-weight: 700;
   color: #fff;
@@ -151,12 +151,61 @@ button {
   font-size: 26rpx;
   line-height: 40rpx;
   text-align: justify;
+  margin-bottom: 30rpx;
 }
 
 .house-info .info-box .item-box {
   font-size: 26rpx;
   padding: 20rpx 0;
   margin-right: 40rpx;
+}
+
+.project-new {
+  margin: 0 45rpx;
+  padding: 20rpx 0 50rpx 0;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+
+.project-box {
+
+}
+
+.time-box {
+  
+}
+
+.time-box .dian {
+  width: 25rpx;
+  height: 25rpx;
+  border-radius: 100%;
+  background: #aaa;
+}
+
+.time-box .time {
+  font-size: 26rpx;
+  color: #aaa;
+  margin-left: 10rpx;
+}
+
+.new-box {
+  min-height: 125rpx;
+  max-height: 250rpx;
+  border-left: 5rpx solid #aaa;
+  margin: 10rpx;
+  margin-right: 0;
+  padding-left: 20rpx;
+  overflow: hidden;
+}
+
+.new-title {
+  font-size: 28rpx;
+  line-height: 50rpx;
+  font-weight: 900;
+}
+
+.new-content {
+  font-size: 25rpx;
 }
 
 .diagram {
@@ -233,6 +282,7 @@ button {
   font-size: 32rpx;
   height: 100rpx;
   padding: 0 50rpx;
+  font-weight: bold;
 }
 
 .header-box .right {
@@ -242,71 +292,86 @@ button {
 }
 
 .logo-img {
-  width: 160rpx;
-  height: 160rpx;
+  width: 130rpx;
+  height: 130rpx;
   margin: 50rpx 0;
+  border-radius: 100%;
 }
 
-.contact-name {
-  font-size: 32rpx;
+.content-box {
+  padding: 35rpx;
 }
 
-.score-box {
-  justify-content: center;
-  padding: 20rpx 0;
+.content-item {
+  justify-content: space-between;
+  height: 180rpx;
 }
 
-.score-box text {
-  padding: 0 5rpx;
-  font-size: 38rpx;
+.content-item .middle {
+  line-height: 70rpx;
+}
+
+.middle .top {
+  text-align: left;
+}
+
+.middle .top .icon-pingfen_xuanzhong {
   color: #ff5400;
 }
 
-.score {
-  background:  #ff5400;
-  color: #fff;
-  width: 80rpx;
-  border-radius: 5rpx;
-  margin-left: 20rpx;
+.middle .top .sub {
+  font-size: 28rpx;
 }
 
-.introduce-one {
-  margin-top: 20rpx;
-}
-
-.introduce-two {
-  margin-bottom: 40rpx;
-}
-
-.contact-phono {
-  justify-content: center;
-  padding: 0;
-  border-radius: 0;
-  border-top: 1px solid #ddd;
-  box-shadow: 0 5rpx 10rpx rgba(0, 0, 0, 0.016);
-  background: #fff;
-}
-
-.phone-icon {
-  font-size: 80rpx;
-  background-image: -webkit-linear-gradient(top, rgb(87, 251, 182),rgba(164, 252, 223,1));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.phone-box {
-  margin-left: 40rpx;
-  height: 110rpx;
-  line-height: 55rpx;
-  text-align: left;
-  color: #555;
-}
-
-.phone-box .top {
-  font-size: 30rpx;
-}
-
-.phone-box .phone {
+.user-name {
   font-size: 35rpx;
   font-weight: bold;
+  margin-right: 10rpx;
+}
+
+.current {
+  padding: 0 15rpx;
+  font-size: 28rpx;
+  border: 1px solid #f79767;
+  border-radius: 25rpx;
+  color: #ff5400;
+  height: 45rpx;
+  line-height: 45rpx;
+  margin-right: 30rpx;
+}
+
+.bottom .selected {
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.bottom .icon-pingfen_xuanzhong {
+  font-size: 24rpx;
+  color: #aaa;
+  margin-left: 10rpx;
+}
+
+.contact-phone {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 100%;
+  background: #ff5400;
+  color: #fff;
+  margin-left: 30rpx;
+  padding: 0;
+  line-height: 70rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.tips {
+  color: #aaa;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  text-align: center;
+  margin-top: 40rpx;
 }

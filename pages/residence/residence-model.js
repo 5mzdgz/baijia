@@ -20,6 +20,7 @@ class Residence extends Base {
   }
 
   nameSaerch(obj, callback) {
+    // console.log(obj)
     const param = {
       url: '/search/item',
       type: 'post',
