@@ -39,7 +39,6 @@ Page({
     this.getRecommendData(1, 10);
     // 分享邀请
     let invte_user_code = decodeURIComponent(options.user_code);
-    console.log(invte_user_code)
     if (invte_user_code) {
       wx.setStorageSync('invte_user_code', invte_user_code);
     }

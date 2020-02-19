@@ -67,7 +67,7 @@ title="佰家购房平台"
 
       <view class="tips" wx:if="{{noData}}">
         <view>广西维界信息科技有限公司技术支持</view>
-        <view>联系电话：13420903823</view>
+        <view>联系电话：134 2090 3823</view>
       </view>
     </view>
   </view>

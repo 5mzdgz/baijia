@@ -84,6 +84,16 @@ Page({
     this.setData({
       recommendArr: []
     })
+    let obj = this.data.obj;
+    if(obj['name']) {
+      obj = {
+        page: 1,
+        pageSize: 10
+      };
+      this.setData({
+        obj: obj
+      })
+    }
     let navArr = this.data.navArr;
     let index = e.currentTarget.dataset.index;
     if (index === 0) {
@@ -97,7 +107,6 @@ Page({
     navArr[this.data.selected].searchData[index].checked = true
 
     let area, type, price;
-    let obj = this.data.obj;
     if (this.data.selected === 0) {
       obj['area'] = navArr[0].searchData[index].descr
     }

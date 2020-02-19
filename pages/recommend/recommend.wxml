@@ -16,7 +16,7 @@ title="{{title}}"
       </view>
       <view class="input-item">
         <view class="label">客户手机</view>
-        <input type='number' name="customerPhone" placeholder="请输入手机号" maxlength="11" />
+        <input type='number' name="customerPhone" value="{{}}" placeholder="请输入手机号" maxlength="11" />
       </view>
 
       <view class="input-item">
@@ -35,7 +35,7 @@ title="{{title}}"
 
       <view class="input-item">
         <view class="label">推荐人电话</view>
-        <input type='number' name="recommendPhone" placeholder="请输入推荐人电话" maxlength="11" />
+        <input type='number' name="recommendPhone" value="{{recommendPhone}}" disabled="true" placeholder="请输入推荐人电话" maxlength="11" />
       </view>
 
       <view class="input-item">
@@ -63,7 +63,7 @@ title="{{title}}"
   </view>
   <view class="tips">
     <view>广西维界信息科技有限公司技术支持</view>
-    <view>联系电话：13420903823</view>
+    <view>联系电话：134 2090 3823</view>
   </view>
   <loading hidden="{{loadingHidden}}">
     加载中...

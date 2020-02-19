@@ -11,6 +11,7 @@ Page({
   data: {
     showIcon: true,
     loadingHidden: true,
+    recommendPhone: '',
     items: [
       { sexid: 1, value: '男' },
       { sexid: 2, value: '女' },
@@ -24,7 +25,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let recommendPhone = wx.getStorageSync('loginUser').phone;
+    this.setData({
+      recommendPhone: recommendPhone
+    })
   },
   goResidenceTap: function() {
     wx.navigateTo({
